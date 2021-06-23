@@ -1,10 +1,11 @@
+// Tạo mảng
 var mangSoNguyen = [];
 
 var getEle = function (id) {
     return document.querySelector(id);
 }
 
-
+// Bắt sự kiện click nhập số
 document.getElementById('btnNhapSo').addEventListener('click', function () {
     var nhapSoNguyen = getEle('#nhapSoNguyen').valueAsNumber;
     var danhSachMang = getEle('#danhSachMang');
@@ -197,6 +198,7 @@ var soSanhSo = function () {
     }
 }
 
+// Bắt sự kiện chọn chức năng 
 document.getElementById('btnChucNang').addEventListener('click', function () {
     var chonChucNang = getEle('#chonChucNang').value;
     var ketQuaChucNang = getEle('#ketQuaChucNang');
