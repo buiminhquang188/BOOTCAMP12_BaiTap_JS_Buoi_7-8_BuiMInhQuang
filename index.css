@@ -1,0 +1,26 @@
+*,
+html {
+  box-sizing: border-box;
+}
+.clear {
+  clear: both;
+}
+body {
+  width: 90%;
+  margin: 0 auto !important;
+}
+p {
+  font-size: 25px;
+}
+input {
+  margin: 20px 0;
+}
+
+#nhapViTriMot, #nhapViTriHai{
+  width: 15%;
+  float: left;
+}
+
+#nhapViTriHai, #btnDoiSo{
+  margin-left: 10px;
+}

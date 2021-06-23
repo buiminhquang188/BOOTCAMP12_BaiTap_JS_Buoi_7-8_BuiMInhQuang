@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <!-- MAIN CSS  -->
+    <link rel="stylesheet" href="index.css" />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <br />
+    <br />
+    <form>
+      <div class="form-group">
+        <label for="formGroupExampleInput">Nhập vào số nguyên</label>
+        <input
+          type="number"
+          class="form-control"
+          id="nhapSoNguyen"
+          placeholder="Nhập vào số nguyên"
+        />
+      </div>
+      <input
+        name=""
+        id="btnNhapSo"
+        class="btn btn-primary"
+        type="button"
+        value="Nhập số"
+      />
+      <input
+        name=""
+        id="btnReset"
+        class="btn btn-primary"
+        type="button"
+        value="Reset"
+      />
+      <p id="danhSachMang"></p>
+      <span id="danhSachMangTb"></span>
+    </form>
+    <form>
+      <div class="form-group">
+        <label for="">Chọn chức năng</label>
+        <select class="form-control" id="chonChucNang">
+          <option disabled>--Chọn chức năng--</option>
+          <option value="1">1. Tổng các số dương trong mảng</option>
+          <option value="2">2. Đếm có bao nhiêu số dương trong mảng</option>
+          <option value="3">3. Tìm số nhỏ nhất trong mảng.</option>
+          <option value="4">4. Tìm số dương nhỏ nhất trong mảng</option>
+          <option value="5">
+            5. Tìm số chẵn cuối cùng trong mảng. Nếu mảng không có giá trị chẵn
+            thì trả về -1
+          </option>
+          <option value="6">
+            6. Đổi chỗ 2 giá trị trong mảng theo vị trí (Cho nhập vào 2 vị trí
+            muốn đổi chỗ giá trị).
+          </option>
+          <option value="7">7. Sắp xếp mảng theo thứ tự tăng dần</option>
+          <option value="8">
+            8. Tìm số nguyên tố đầu tiên trong mảng. Nếu mảng không có số nguyên
+            tố thì trả về – 1.
+          </option>
+          <option value="9">
+            9. Nhập thêm 1 mảng số thực, tìm xem trong mảng có bao nhiêu số
+            nguyên?
+          </option>
+          <option value="10">
+            10. So sánh số lượng số dương và số lượng số âm xem số nào nhiều
+            hơn.
+          </option>
+        </select>
+      </div>
+      <input
+        name=""
+        id="btnChucNang"
+        class="btn btn-primary"
+        type="button"
+        value="Chọn"
+      />
+      <br />
+      <div id="chucNangSau" style="display: none">
+        <label style="display: block; margin-top: 10px"
+          >Đổi chỗ giá trị theo vị trí</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="nhapViTriMot"
+          placeholder="Vị Trí 1"
+        />
+        <input
+          type="number"
+          class="form-control"
+          id="nhapViTriHai"
+          placeholder="Vị trí 2"
+        />
+        <input
+          name=""
+          onclick="btnDoiSo()"
+          class="btn btn-primary"
+          type="button"
+          value="Đổi"
+        />
+        <br />
+        <span id="kiemTraViTri"></span>
+        <div class="clear"></div>
+      </div>
+      <div id="chucNangChin" style="display: none">
+        <label>Nhập vào số thực</label>
+        <input
+          type="number"
+          class="form-control"
+          id="nhapSoThuc"
+          placeholder="Nhập vào số thực"
+        />
+        <input
+          name=""
+          onclick="btnNhapSoThuc()"
+          class="btn btn-primary"
+          type="button"
+          value="Nhập số"
+        />
+        <input
+          name=""
+          onclick="btnTimSoNguyen()"
+          class="btn btn-primary"
+          type="button"
+          value="Tìm"
+        />
+        <div class="clear"></div>
+      </div>
+      <p id="ketQuaChucNang"></p>
+      <span id="kiemTraChucNang"></span>
+    </form>
+    <!-- MAIN JS  -->
+    <script src="index.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
