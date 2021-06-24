@@ -159,10 +159,16 @@ var timSoNguyenToDauTien = function () {
 
 function btnNhapSoThuc() {
     var nhapSoThuc = getEle('#nhapSoThuc').valueAsNumber;
-    mangSoNguyen.push(nhapSoThuc);
-    danhSachMangTb.innerHTML = '';
-    danhSachMang.innerHTML = mangSoNguyen;
-    getEle('#nhapSoThuc').value = '';
+    if (nhapSoThuc % 1 != 0) {
+        mangSoNguyen.push(nhapSoThuc);
+        danhSachMangTb.innerHTML = '';
+        danhSachMang.innerHTML = mangSoNguyen;
+        getEle('#nhapSoThuc').value = '';
+        kiemTraChucNang.innerHTML = '';
+    }
+    else {
+        kiemTraChucNang.innerHTML = '(*) Bạn phải nhập số thực';
+    }
 }
 
 function btnTimSoNguyen() {
