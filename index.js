@@ -169,6 +169,9 @@ function btnNhapSoThuc() {
     else {
         kiemTraChucNang.innerHTML = '(*) Bạn phải nhập số thực';
     }
+    if (isNaN(nhapSoThuc)) {
+        kiemTraChucNang.innerHTML = '(*) Bạn không được bỏ trống;'
+    }
 }
 
 function btnTimSoNguyen() {
